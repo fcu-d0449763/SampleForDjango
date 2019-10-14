@@ -1,0 +1,44 @@
+{% extends "base.html" %}{% load bootstrap4 %} {% load fontawesome %} {% load static %} 
+
+{% block content %}
+
+
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+<style>
+    .selector{
+        width:100% !important;
+        }
+    body{
+        font-family: 微軟正黑體;
+    }
+</style>
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css"
+href="/static/admin/css/ie.css" /><![endif]-->
+
+<script type="text/javascript">window.__admin_media_prefix__ =
+        "/static/admin/";</script>
+
+
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<!-- <script type="text/javascript" src="/static/admin/js/jquery.js"></script> -->
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/SelectBox.js"></script>
+<script type="text/javascript" src="/static/admin/js/SelectFilter2.js"></script>
+<script type="text/javascript" src="/static/admin/js/calendar.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+
+<div class="row">
+    <div class="col-sm-12">
+        <br> <br>
+        <form method="post" enctype="multipart/form-data">
+            {{ form.media }}
+            {% csrf_token %} {% bootstrap_form form %} <input class="btn btn-secondary" type="submit" value="儲存">
+        </form>
+
+    </div>
+</div>
+{% endblock %}
